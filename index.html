@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            .q{
+                font-size: x-large;
+                margin-top: 100px;
+                margin-left: 100px;
+            }
+            .w{
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <form onclick="return valid()">
+            <table class="q">
+                <tr>
+            <td>Name: </td>
+            <td><input type="text" id="i1" class="w"></td>
+            <td id="o1"></td>
+            </tr>
+            <tr>
+            <td>Email: </td>
+            <td><input type="email" id="i2" class="w"></td>
+            <td id="o2"></td>
+            </tr>
+            <tr>
+           <td>Website: </td>
+           <td><input type="url" id="i3" class="w"></td>
+           <td id="o3"></td>
+           </tr>
+           <tr>
+            <td>Message: </td>
+            <td><textarea rows="4" cols="20" id="i4" class="w"></textarea></td>
+            <td id="o4"></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button >submit</button></td>
+            </tr>
+            </table>
+        </form>
+        <div></div>
+        <script>
+           function valid()
+           {
+            var a=document.getElementById('i1').value;
+            var b=document.getElementById('i2').value;
+            var c=document.getElementById('i3').value;
+            var d=document.getElementById('i4').value;
+            if(a.length==0){
+                const a1 = document.getElementById('i1');
+                a1.style.borderColor = 'red';
+                document.getElementById('o1').innerHTML="This field is required";
+                document.getElementById('o1').style.color='red';
+            }
+            if(b.length==0){
+                const a1 = document.getElementById('i2');
+                a1.style.borderColor = 'red';
+            document.getElementById('o2').innerHTML="A valid email address is required";
+            document.getElementById('o2').style.color='red';
+            }
+            if(c.length==0){
+                const a1 = document.getElementById('i3');
+                a1.style.borderColor = 'red';
+            document.getElementById('o3').innerHTML="A valid url is required";
+            document.getElementById('o3').style.color='red';
+            }
+            if(d.length==0)
+            {
+                const a1 = document.getElementById('i4');
+                a1.style.borderColor = 'red';
+                document.getElementById('o4').innerHTML="This field is required";
+                document.getElementById('o4').style.color='red';
+                return false;
+            }
+            return true;
+        }
+        </script>
+    </body>
+</html>
